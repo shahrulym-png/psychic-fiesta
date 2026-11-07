@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>IQRAB HARAMAIN — Bahasa Arab &amp; Al-Quran dari Makkah</title>
+<meta name="description" content="Pengajian intensif 30–50 hari bersama Universiti Umm Al-Qura, Makkah. Fahami Al-Quran, talaqqi di Masjidil Haram, dan mohon subsidi program IQRAB HARAMAIN." />
+<meta name="theme-color" content="#0A1F1C" />
+<meta property="og:title" content="IQRAB HARAMAIN — Bahasa Arab &amp; Al-Quran dari Makkah" />
+<meta property="og:description" content="Pengajian intensif 30–50 hari bersama Universiti Umm Al-Qura, Makkah." />
+<meta property="og:image" content="https://iqrab.my/haramain/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="/haramain/logos/iqrab-mark.png" />
+<link rel="apple-touch-icon" href="/haramain/logos/iqrab-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg1:#0A1F1C; --bg2:#0F172A; --hero1:#0E2925; --hero2:#0F172A;
+    --gold:#F59E0B; --gold2:#FBBF24; --emerald:#10B981; --cyan:#06B6D4;
+    --text:#E2E8F0; --text2:#CBD5E1; --muted:#94A3B8;
+    --card:rgba(15,23,42,.6); --border:rgba(148,163,184,.14);
+    --light:#F8FAF9; --ink:#0F172A; --ink-muted:#475569;
+    --radius:22px; --btn-r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif;
+    color:var(--text); line-height:1.65;
+    background:radial-gradient(1200px 600px at 50% -10%,rgba(16,185,129,.14),transparent 60%),
+               linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%) fixed;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:#5EEAD4; text-underline-offset:3px}
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--emerald); outline-offset:2px;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .section{padding:64px 0}
+  @media (min-width:768px){.section{padding:80px 0}}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    background:rgba(10,31,28,.82);
+    border-bottom:1px solid rgba(148,163,184,.12);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:800;font-size:17px}
+  .brand img{width:36px;height:36px;border-radius:11px;object-fit:cover}
+  .brand .bt span{color:var(--gold)}
+  .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .nav a.nav-link{
+    color:var(--text2); text-decoration:none; font-weight:600; font-size:13px;
+    padding:8px 10px; border-radius:10px;
+  }
+  .nav a.nav-link:hover{color:#fff; background:rgba(148,163,184,.1)}
+  @media (max-width:640px){
+    .nav .nav-link{display:none}
+    .brand{font-size:15px}
+  }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font:inherit; font-weight:800; border-radius:var(--btn-r);
+    padding:13px 20px; text-decoration:none; cursor:pointer; border:0;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{
+    color:var(--bg1);
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+    box-shadow:0 10px 30px -10px rgba(245,158,11,.6);
+  }
+  .btn-ghost{
+    color:var(--text); background:rgba(15,23,42,.55);
+    border:1px solid rgba(148,163,184,.25);
+  }
+  .btn-dark{
+    color:#fff; background:var(--ink);
+    box-shadow:0 10px 28px -12px rgba(15,23,42,.45);
+  }
+  .btn-sm{padding:9px 14px;font-size:13px;border-radius:12px}
+  .btn-block{width:100%}
+
+  .eyebrow{
+    display:inline-block; font-size:12px; font-weight:700;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--gold);
+    background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.3);
+    padding:6px 12px; border-radius:999px;
+  }
+  .eyebrow-dark{
+    color:#B45309; background:rgba(245,158,11,.12); border-color:rgba(245,158,11,.35);
+  }
+
+  h1,h2,h3{line-height:1.2; margin:0}
+  h1{font-size:clamp(28px,5.5vw,48px); font-weight:800; color:#fff}
+  h1 em{font-style:normal; color:var(--gold)}
+  h2{font-size:clamp(24px,4vw,36px); font-weight:800; color:#fff}
+  h3{font-size:clamp(17px,2.2vw,20px); font-weight:700; color:#fff}
+  .lead{font-size:clamp(15px,2.2vw,18px); color:var(--text2); max-width:640px}
+  .muted{color:var(--muted)}
+  .ayah{font-family:Amiri,serif; font-size:clamp(26px,5vw,38px); color:var(--gold); direction:rtl; margin:0 0 6px; line-height:1.5}
+  .ayah-ms{font-size:13px; color:var(--muted); margin:0}
+
+  .card{
+    background:var(--card); border:1px solid var(--border);
+    border-radius:var(--radius); padding:24px;
+  }
+  .card-light{
+    background:#fff; border:1px solid rgba(15,23,42,.08);
+    border-radius:var(--radius); padding:24px;
+    box-shadow:0 10px 30px -18px rgba(15,23,42,.18);
+    color:var(--ink);
+  }
+  .card-light h3{color:var(--ink)}
+  .card-light .muted, .card-light p{color:var(--ink-muted)}
+
+  .grid{display:grid; gap:16px}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:720px){
+    .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  }
+
+  /* Hero */
+  .hero{
+    padding:48px 0 56px;
+    background:linear-gradient(160deg,var(--hero1) 0%,var(--hero2) 70%);
+    position:relative; overflow:hidden;
+  }
+  .hero::after{
+    content:""; position:absolute; inset:auto -20% -40% 40%; height:70%;
+    background:radial-gradient(circle,rgba(16,185,129,.18),transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid; gap:36px; align-items:center;
+    grid-template-columns:1.1fr .9fr; position:relative; z-index:1;
+  }
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding:36px 0 48px}}
+  .hero-photo{
+    border-radius:24px; overflow:hidden;
+    border:1px solid rgba(148,163,184,.18);
+    box-shadow:0 30px 60px -24px rgba(0,0,0,.65);
+    aspect-ratio:4/3; object-fit:cover; width:100%;
+  }
+  .hero-caption{font-size:12px; color:var(--muted); margin-top:10px; text-align:center}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+  .hero-ayah{margin-top:28px; padding-top:22px; border-top:1px solid rgba(148,163,184,.14)}
+
+  /* Stats */
+  .stats{padding:28px 0; border-block:1px solid rgba(148,163,184,.12); background:rgba(15,23,42,.35)}
+  .stat-item{text-align:center; padding:12px}
+  .stat-num{font-size:clamp(26px,4vw,34px); font-weight:800; color:var(--gold); line-height:1.1}
+  .stat-label{font-size:13px; color:var(--text2); margin-top:6px}
+
+  /* Logos */
+  .logos{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:28px; padding:28px 0}
+  .logos img{height:42px; width:auto; object-fit:contain; opacity:.92; filter:brightness(1.05)}
+  @media (max-width:520px){.logos img{height:34px}}
+
+  /* Numbered list cards */
+  .num{
+    width:36px; height:36px; border-radius:12px; display:grid; place-items:center;
+    font-weight:800; font-size:13px; color:var(--bg1);
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+    flex-shrink:0;
+  }
+  .num-row{display:flex; gap:14px; align-items:flex-start}
+  .num-row p{margin:6px 0 0; color:var(--text2); font-size:14.5px}
+
+  /* Light band */
+  .band-light{
+    background:var(--light); color:var(--ink);
+  }
+  .band-light h2{color:var(--ink)}
+  .band-light .lead, .band-light .muted{color:var(--ink-muted)}
+  .band-light .section-sub{color:var(--ink-muted)}
+
+  /* Package cards */
+  .price-old{text-decoration:line-through; color:#94A3B8; font-size:15px; font-weight:600}
+  .price-new{font-size:clamp(28px,4vw,36px); font-weight:800; color:var(--ink); line-height:1.1; margin:4px 0 6px}
+  .badge{
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em;
+    text-transform:uppercase; padding:5px 10px; border-radius:999px;
+    background:rgba(16,185,129,.12); color:#047857; border:1px solid rgba(16,185,129,.25);
+  }
+  .pkg-meta{list-style:none; padding:0; margin:16px 0 20px; display:grid; gap:8px}
+  .pkg-meta li{font-size:14px; color:var(--ink-muted); display:flex; gap:8px}
+  .pkg-meta li::before{content:"✓"; color:var(--emerald); font-weight:800}
+  .pkg-featured{
+    border:2px solid rgba(245,158,11,.45);
+    box-shadow:0 18px 40px -20px rgba(245,158,11,.35);
+    position:relative;
+  }
+  .pkg-featured::before{
+    content:"Istimewa Lepasan SPM & Rejab–Ramadan";
+    position:absolute; top:-12px; left:20px; right:20px;
+    text-align:center; font-size:11px; font-weight:800; letter-spacing:.03em;
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+    color:var(--bg1); padding:6px 10px; border-radius:999px;
+  }
+
+  /* Gallery */
+  .gallery{
+    display:grid; gap:12px;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .gallery figure{margin:0; position:relative; overflow:hidden; border-radius:16px; aspect-ratio:4/3}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+  .gallery figure:hover img{transform:scale(1.05)}
+  .gallery figcaption{
+    position:absolute; inset:auto 0 0 0; padding:28px 12px 10px;
+    background:linear-gradient(transparent,rgba(10,31,28,.85));
+    color:#fff; font-size:12px; font-weight:600;
+  }
+  .gallery .wide{grid-column:span 2}
+  @media (max-width:800px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery .wide{grid-column:span 2}}
+  @media (max-width:480px){.gallery{grid-template-columns:1fr}.gallery .wide{grid-column:span 1}}
+
+  /* FAQ */
+  details.faq{
+    background:#fff; border:1px solid rgba(15,23,42,.08); border-radius:16px;
+    padding:4px 18px; margin-bottom:10px;
+  }
+  details.faq summary{
+    cursor:pointer; font-weight:700; color:var(--ink); padding:14px 0;
+    list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"+"; color:var(--gold); font-size:20px; font-weight:800}
+  details.faq[open] summary::after{content:"−"}
+  details.faq p{margin:0 0 16px; color:var(--ink-muted); font-size:14.5px}
+
+  /* Form */
+  .form-card{max-width:640px; margin:0 auto}
+  label{display:block; font-size:13px; font-weight:600; color:var(--text2); margin:0 0 6px}
+  .field{margin-bottom:14px}
+  input[type="text"], input[type="email"], input[type="tel"]{
+    width:100%; padding:12px 14px; border-radius:12px;
+    border:1px solid rgba(148,163,184,.25);
+    background:rgba(15,23,42,.55); color:#fff; font:inherit;
+  }
+  input::placeholder{color:#64748B}
+  .form-note{font-size:13px; color:var(--muted); margin-top:12px; text-align:center}
+  .honeypot{position:absolute; left:-9999px; opacity:0; height:0; width:0; overflow:hidden}
+
+  /* Features list */
+  .feat-icon{
+    width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+    background:rgba(16,185,129,.12); color:var(--emerald); font-weight:800; font-size:14px;
+    flex-shrink:0;
+  }
+
+  /* Footer */
+  .cta-band{
+    background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(15,23,42,.8));
+    border-block:1px solid rgba(148,163,184,.14);
+    text-align:center; padding:56px 0;
+  }
+  footer{
+    padding:40px 0 48px; border-top:1px solid rgba(148,163,184,.12);
+    font-size:14px; color:var(--muted);
+  }
+  footer a{color:var(--text2)}
+  .footer-grid{display:grid; gap:24px; grid-template-columns:1.4fr 1fr}
+  @media (max-width:640px){.footer-grid{grid-template-columns:1fr}}
+
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .pill{
+    font-size:12px; font-weight:600; color:var(--text2);
+    background:rgba(148,163,184,.1); border:1px solid rgba(148,163,184,.16);
+    padding:6px 12px; border-radius:999px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="#atas" aria-label="Iqrab Haramain — ke atas">
+      <img src="/haramain/logos/iqrab-mark.png" width="36" height="36" alt="Logo Iqrab" />
+      <span class="bt">Iq<span>rab</span> Haramain</span>
+    </a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <!-- Produk: halaman ini -->
+      <a class="nav-link" href="#atas">Iqrab Haramain</a>
+      <!-- EDIT: tukar ke https://iqrab.my/1000/ bila domain live -->
+      <a class="btn btn-gold btn-sm" href="/1000/">Iqrab Kalimah</a>
+      <a class="btn btn-ghost btn-sm" href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20program%20Iqrab%20Haramain." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="atas">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">IQRAB HARAMAIN</span>
+        <h1 style="margin-top:16px">Menguasai Bahasa Arab &amp; memahami Al-Quran <em>secara langsung dari bumi Makkah Al-Mukarramah</em></h1>
+        <p class="lead" style="margin:16px 0 0">Lebih dari sekadar umrah. Pengajian intensif 30–50 hari dengan kerjasama rasmi Universiti Umm Al-Qura, Makkah. Hadiahkan anjakan rohani buat diri &amp; anak-anak tersayang.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#pakej">Pilih pakej program</a>
+          <a class="btn btn-ghost" href="#borang">Mohon biasiswa / hasrat</a>
+        </div>
+        <div class="hero-ayah">
+          <p class="ayah">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ</p>
+          <p class="ayah-ms">Al-Qamar, 54:17 — Dan sesungguhnya Kami telah mudahkan Al-Quran untuk peringatan.</p>
+        </div>
+      </div>
+      <div>
+        <img class="hero-photo" src="/haramain/photos/hero-haram.jpg" width="800" height="600" alt="Masjidil Haram, Makkah Al-Mukarramah" fetchpriority="high" />
+        <p class="hero-caption">Masjidil Haram · Makkah Al-Mukarramah</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="stats" aria-label="Ringkasan program">
+    <div class="wrap grid grid-3">
+      <div class="stat-item">
+        <div class="stat-num">75%</div>
+        <div class="stat-label">kalimah Al-Quran — fahami makna dan tadabbur 30 juzuk secara mendalam.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Talaqqi</div>
+        <div class="stat-label">masyayikh Makkah — bimbingan langsung di dataran Masjidil Haram.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">80–120</div>
+        <div class="stat-label">jam pembelajaran — sijil rasmi pengajian daripada Universiti Umm Al-Qura, Makkah.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner logos + tags -->
+  <section class="section" style="padding-top:40px;padding-bottom:24px">
+    <div class="wrap" style="text-align:center">
+      <p class="muted" style="max-width:720px;margin:0 auto 8px;font-size:14.5px">Program yang diiktiraf &amp; dijalankan dengan kerjasama akademik terus bersama institusi pengajian tinggi terkemuka di Makkah Al-Mukarramah.</p>
+      <div class="pill-row" style="justify-content:center">
+        <span class="pill">Haramain</span>
+        <span class="pill">Makkah</span>
+        <span class="pill">Modul ilmu</span>
+        <span class="pill">Sejak 2009</span>
+      </div>
+      <div class="logos" aria-label="Rakan program">
+        <img src="/haramain/logos/iqrab.png" alt="Iqrab" height="42" />
+        <img src="/haramain/logos/uqu.png" alt="Universiti Umm Al-Qura" height="42" />
+        <img src="/haramain/logos/uqu-mark.png" alt="Umm Al-Qura mark" height="42" />
+        <img src="/haramain/logos/iqra-arabia.png" alt="Iqra Arabia" height="42" />
+        <img src="/haramain/logos/yayasan.png" alt="Yayasan Mahasiswa" height="42" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENGAPA ========== -->
+  <section class="section" id="mengapa">
+    <div class="wrap">
+      <span class="eyebrow">Masalah yang kita kenal</span>
+      <h2 style="margin-top:12px;margin-bottom:8px">Mengapa IQRAB Haramain</h2>
+      <p class="lead muted" style="margin-bottom:28px">Empat cabaran yang sering dihadapi — dan sebab kenapa program ini wujud.</p>
+      <div class="grid grid-2">
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">01</span>
+          <div>
+            <h3>Solat &amp; mengaji tanpa penghayatan</h3>
+            <p>Bertahun-tahun kita mengaji dan menunaikan solat setiap hari, namun hati tetap rasa kosong kerana tidak memahami dan tidak mengerti serta menghayati maksud bacaan Al-Quran sebagai kalamullah dan juga bacaan doa yang kita bisikkan kepada Allah.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">02</span>
+          <div>
+            <h3>Masa yang terlalu singkat di Makkah</h3>
+            <p>Berada di Tanah Suci Makkah sekadar 10 hari hingga 2 minggu untuk umrah biasa masih tidak cukup masa untuk membentuk tabiat ibadah yang berterusan dan konsisten setelah pulang ke tanah air.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">03</span>
+          <div>
+            <h3>Pengajian online yang sering tertangguh</h3>
+            <p>Sebahagian kita cuba mengikuti kelas Bahasa Arab secara online, tetapi kerap tertangguh kerana urusan-urusan yang mendatang seperti kenduri, komitmen kerja, dan kesibukan harian. Akhirnya tidak dapat fokus untuk pengajian.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">04</span>
+          <div>
+            <h3>Kelas yang tidak tertumpu pada Al-Quran</h3>
+            <p>Kebanyakan kelas pengajian Bahasa Arab di luar sana lebih menjurus kepada komunikasi biasa dan pembacaan kitab Arab, tetapi tidak banyak program Bahasa Arab yang fokus khusus untuk memahami Al-Quran.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTENSIF ========== -->
+  <section class="section" id="intensif" style="padding-top:24px">
+    <div class="wrap">
+      <span class="eyebrow">Penyelesaian</span>
+      <h2 style="margin-top:12px">IQRAB Haramain — Intensif Quran dan Bahasa Arab Haramain</h2>
+      <p class="lead" style="margin:10px 0 28px">Sebulan di Makkah, tanpa gangguan yang lain.</p>
+      <div class="grid" style="gap:14px">
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">01</span>
+          <div>
+            <h3>Mendalami Bahasa Arab secara intensif tanpa gangguan</h3>
+            <p>IQRAB HARAMAIN memberi peluang untuk anda duduk selama sebulan mendalami Bahasa Arab secara intensif secara khusus tanpa sebarang gangguan yang lain. Anda boleh memberikan komitmen waktu, hati, dan tumpuan sepenuhnya untuk betul-betul belajar.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">02</span>
+          <div>
+            <h3>Fokus 1 bulan yang jelas</h3>
+            <p>Fokus pada 1 bulan ini adalah untuk mempelajari asas Bahasa Arab komunikasi dan mendalami Bahasa Arab untuk memahami Al-Quran, dengan tumpuan kepada kalimah-kalimah yang berulang dalam Al-Quran.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">03</span>
+          <div>
+            <h3>2 modul khusus &amp; berkesan</h3>
+            <p>Program IQRAB di-design dengan 2 modul yang berkesan: Modul Komunikasi Bahasa Arab dan Modul Bahasa Arab Al-Quran.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">04</span>
+          <div>
+            <h3>Gabungan indah ibadah &amp; akademik</h3>
+            <p>Pakej lengkap yang menggabungkan Ibadah Umrah, pengajian akademik Bahasa Arab di Universiti Umm Al-Qura, dan talaqqi Quran di Masjidil Haram.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="num" aria-hidden="true">05</span>
+          <div>
+            <h3>Dikelola badan berpengalaman sejak 2009</h3>
+            <p>Dikelola oleh gabungan pengalaman Yayasan Mahasiswa &amp; Qalam Consultancy yang telah menganjurkan program-program IQRAB sejak tahun 2009 merentasi 5 buah negara.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 MODUL ========== -->
+  <section class="section" id="modul" style="padding-top:24px">
+    <div class="wrap">
+      <span class="eyebrow">Kurikulum</span>
+      <h2 style="margin-top:12px;margin-bottom:8px">Dua modul. Satu bulan. Hati yang mula memahami.</h2>
+      <div class="grid grid-2" style="margin-top:24px">
+        <article class="card">
+          <span class="eyebrow" style="margin-bottom:12px">Modul 1</span>
+          <h3 style="margin-top:12px">Modul Komunikasi Bahasa Arab</h3>
+          <p class="muted" style="margin:10px 0 0">Asas komunikasi harian di bumi Makkah — supaya peserta boleh berurusan, bertanya, dan hidup dalam suasana Arab sepanjang tempoh pengajian, bermula dari tahap asas.</p>
+        </article>
+        <article class="card" style="border-color:rgba(245,158,11,.28);background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(15,23,42,.7))">
+          <span class="eyebrow" style="margin-bottom:12px">Modul 2</span>
+          <h3 style="margin-top:12px">Modul Bahasa Arab Al-Quran</h3>
+          <p class="muted" style="margin:10px 0 0">Tumpuan pada kalimah yang berulang dalam Al-Quran, supaya bacaan solat, doa, dan tadabbur 30 juzuk tidak lagi terasa kosong. Inilah bezanya IQRAB.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7 KEISTIMEWAAN ========== -->
+  <section class="section" id="keistimewaan" style="padding-top:24px">
+    <div class="wrap">
+      <span class="eyebrow">Manfaat</span>
+      <h2 style="margin-top:12px;margin-bottom:8px">7 keistimewaan utama yang bakal mengubah kehidupan peserta</h2>
+      <div class="grid grid-2" style="margin-top:24px">
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">01</span>
+          <div>
+            <h3>Kemahiran Bahasa Arab praktikal</h3>
+            <p class="muted" style="margin:6px 0 0">Menguasai asas komunikasi harian di bumi Makkah.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">02</span>
+          <div>
+            <h3>Talaqqi Quran masyayikh Makkah</h3>
+            <p class="muted" style="margin:6px 0 0">Bimbingan sebutan, tajwid, dan hafazan surah-surah pilihan bersama asatizah Masjidil Haram.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">03</span>
+          <div>
+            <h3>Pengiktirafan sijil rasmi</h3>
+            <p class="muted" style="margin:6px 0 0">Menerima Certificate of Attendance dari Institute of Consulting Research and Studies, Universiti Umm Al-Qura.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">04</span>
+          <div>
+            <h3>Peluang karier mutawwif</h3>
+            <p class="muted" style="margin:6px 0 0">Pendedahan awal pengurusan umrah, bimbingan jemaah, dan teknik penyampaian sirah.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">05</span>
+          <div>
+            <h3>Jaulah &amp; rehlah anbiya</h3>
+            <p class="muted" style="margin:6px 0 0">Menerokai tempat-tempat bersejarah di Makkah &amp; Madinah bagi menghayati sirah Nabi.</p>
+          </div>
+        </article>
+        <article class="card num-row">
+          <span class="feat-icon" aria-hidden="true">06</span>
+          <div>
+            <h3>Sistem pembelajaran moden</h3>
+            <p class="muted" style="margin:6px 0 0">38 buku pelajar, modul video dan audio, ujian bertahap serta penilaian progresif.</p>
+          </div>
+        </article>
+        <article class="card num-row" style="grid-column:1 / -1">
+          <span class="feat-icon" aria-hidden="true">07</span>
+          <div>
+            <h3>Penginapan selesa &amp; teratur</h3>
+            <p class="muted" style="margin:6px 0 0">Kediaman di Aziziyah/Hijrah dengan akses bas terus ke Masjidil Haram (7–15 minit).</p>
+          </div>
+        </article>
+      </div>
+      <p class="muted" style="margin:28px 0 0;text-align:center;font-size:14.5px">ﷺ Rehlah Jaulah ke tempat sirah Nubuwawah. Dalami ibrah. Hidupkan rasa cinta dan rindu kepada baginda Nabi.</p>
+    </div>
+  </section>
+
+  <!-- ========== PAKEJ (LIGHT) ========== -->
+  <section class="band-light section" id="pakej">
+    <div class="wrap">
+      <span class="eyebrow eyebrow-dark">Ambilan 2026 / 2027</span>
+      <h2 style="margin-top:12px">Pilih pakej program &amp; ambilan anda</h2>
+      <p class="lead section-sub" style="margin:10px 0 8px">Biasiswa subsidi program hanya tinggal 40 kerusi sahaja.</p>
+      <div class="grid grid-3" style="margin-top:28px;align-items:stretch">
+
+        <article class="card-light">
+          <span class="badge">Cuti Sekolah</span>
+          <h3 style="margin-top:12px">Program 30 Hari</h3>
+          <p class="muted" style="margin:4px 0 12px">Pelajar Tingkatan 1–4</p>
+          <div class="price-old">RM 12,970</div>
+          <div class="price-new">RM 10,970</div>
+          <p style="font-size:12px;font-weight:700;color:#047857;margin:0 0 12px">Telah Ditolak Subsidi Program</p>
+          <ul class="pkg-meta">
+            <li><strong>Tarikh:</strong>&nbsp;1 Disember – 30 Disember 2026</li>
+            <li>80 Jam Kelas Bahasa Arab (30 Hari di Makkah + 40 Jam di Malaysia)</li>
+          </ul>
+          <a class="btn btn-dark btn-block" target="_blank" rel="noopener"
+             href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20daftar%20Iqra%20Cuti%20Sekolah%2030%20Hari%20(Tingkatan%201%E2%80%934%2C%201%E2%80%9330%20Dis%202026).">
+            Daftar Iqra Cuti Sekolah 30 Hari
+          </a>
+        </article>
+
+        <article class="card-light">
+          <span class="badge">Lepasan SPM</span>
+          <h3 style="margin-top:12px">Program 30 Hari</h3>
+          <p class="muted" style="margin:4px 0 12px">Pelajar Lepasan SPM</p>
+          <div class="price-old">RM 12,970</div>
+          <div class="price-new">RM 10,970</div>
+          <p style="font-size:12px;font-weight:700;color:#047857;margin:0 0 12px">Telah Ditolak Subsidi Program</p>
+          <ul class="pkg-meta">
+            <li><strong>Tarikh:</strong>&nbsp;30 Disember 2026 – 30 Januari 2027</li>
+            <li>80 Jam Kelas Bahasa Arab (30 Hari di Makkah + 40 Jam di Malaysia)</li>
+          </ul>
+          <a class="btn btn-dark btn-block" target="_blank" rel="noopener"
+             href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20daftar%20Iqra%20Lepasan%20SPM%2030%20Hari%20(30%20Dis%202026%E2%80%9330%20Jan%202027).">
+            Daftar Iqra Lepasan SPM 30 Hari
+          </a>
+        </article>
+
+        <article class="card-light pkg-featured" style="padding-top:32px">
+          <span class="badge">20 Rejab – 10 Ramadan</span>
+          <h3 style="margin-top:12px">Program 50 Hari</h3>
+          <p class="muted" style="margin:4px 0 12px">Pelajar Lepasan SPM / Dewasa</p>
+          <div class="price-new" style="margin-top:18px">RM 12,970</div>
+          <p style="font-size:12px;font-weight:700;color:#047857;margin:0 0 12px">Telah Ditolak Subsidi Program</p>
+          <ul class="pkg-meta">
+            <li><strong>Tarikh:</strong>&nbsp;30 Disember 2026 – 17 Februari 2027</li>
+            <li>120 Jam Kelas Bahasa Arab (50 Hari di Makkah + 40 Jam di Malaysia)</li>
+          </ul>
+          <a class="btn btn-gold btn-block" target="_blank" rel="noopener"
+             href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20daftar%20Program%2050%20Hari%20Iqrab%20Haramain%20(30%20Dis%202026%E2%80%9317%20Feb%202027).">
+            Daftar Program 50 Hari
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="section" id="galeri">
+    <div class="wrap">
+      <span class="eyebrow">Suasana program</span>
+      <h2 style="margin-top:12px;margin-bottom:24px">Galeri Iqrab Haramain</h2>
+      <div class="gallery">
+        <figure class="wide">
+          <img src="/haramain/photos/talaqqi-haram.jpg" alt="Talaqqi di Masjidil Haram" loading="lazy" width="800" height="600" />
+          <figcaption>Tadabbur di dalam masjid</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/sijil-rasmi.jpg" alt="Majlis penyerahan sijil rasmi" loading="lazy" width="600" height="450" />
+          <figcaption>Majlis sijil — penyerahan sijil program</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kohort.jpg" alt="Satu kohort peserta dan guru" loading="lazy" width="600" height="450" />
+          <figcaption>Satu kohort — peserta &amp; guru program</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kampus.jpg" alt="Kampus Universiti Umm Al-Qura" loading="lazy" width="600" height="450" />
+          <figcaption>Di kampus Universiti Umm Al-Qura</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/bacaan.jpg" alt="Peserta membaca Al-Quran" loading="lazy" width="600" height="450" />
+          <figcaption>Halaqah — membaca bersama</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/ihram.jpg" alt="Ibadah umrah di halaman Masjidil Haram" loading="lazy" width="600" height="450" />
+          <figcaption>Ibadah umrah — halaman Masjidil Haram</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/halaqah.jpg" alt="Halaqah ilmu bersama guru" loading="lazy" width="600" height="450" />
+          <figcaption>Halaqah ilmu — duduk bersama guru</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kelas-moden.jpg" alt="Bilik kuliah pengajian intensif" loading="lazy" width="600" height="450" />
+          <figcaption>Bilik kuliah — pengajian intensif</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/halaqah-merah.jpg" alt="Halaqah dengan kain merah" loading="lazy" width="600" height="450" />
+          <figcaption>Halaqah — suasana pembelajaran</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/dewan-kampus.jpg" alt="Dewan kampus Makkah" loading="lazy" width="600" height="450" />
+          <figcaption>Lawatan kampus Makkah</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/peserta.jpg" alt="Jaulah peserta ke tapak bersejarah" loading="lazy" width="600" height="450" />
+          <figcaption>Jaulah peserta — tapak bersejarah</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/makmal.jpg" alt="Makmal inovasi di kampus" loading="lazy" width="600" height="450" />
+          <figcaption>Di kampus — makmal inovasi</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kuliah.jpg" alt="Suasana kelas pembelajaran bertahap" loading="lazy" width="600" height="450" />
+          <figcaption>Suasana kelas — pembelajaran bertahap</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kumpulan.jpg" alt="Satu rombongan lelaki dan perempuan" loading="lazy" width="600" height="450" />
+          <figcaption>Satu rombongan — lelaki &amp; perempuan</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kelas-tulis.jpg" alt="Latihan kelas nota dan bimbingan" loading="lazy" width="600" height="450" />
+          <figcaption>Latihan kelas — nota &amp; bimbingan</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/ihram-dalam.jpg" alt="Persiapan umrah bersama rombongan" loading="lazy" width="600" height="450" />
+          <figcaption>Persiapan umrah — bersama rombongan</figcaption>
+        </figure>
+        <figure class="wide">
+          <img src="/haramain/photos/uhud.jpg" alt="Jaulah ke Uhud" loading="lazy" width="800" height="600" />
+          <figcaption>Rehlah jaulah — tapak sirah Nubuwawah</figcaption>
+        </figure>
+        <figure>
+          <img src="/haramain/photos/kelas-ustaz.jpg" alt="Kelas bersama ustaz" loading="lazy" width="600" height="450" />
+          <figcaption>Kelas bersama asatizah</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ (LIGHT) ========== -->
+  <section class="band-light section" id="faq">
+    <div class="wrap" style="max-width:780px">
+      <span class="eyebrow eyebrow-dark">Soalan lazim</span>
+      <h2 style="margin-top:12px;margin-bottom:24px">Soalan yang sering ditanya</h2>
+
+      <details class="faq">
+        <summary>Siapa yang layak menyertai program ini?</summary>
+        <p>Terbuka kepada lelaki &amp; perempuan berusia 18 tahun ke atas (atau pelajar Tingkatan 1–4 bagi pakej cuti sekolah), sihat tubuh badan, dan berminat mendalami Bahasa Arab.</p>
+      </details>
+      <details class="faq">
+        <summary>Adakah saya perlu ada asas Bahasa Arab sebelum menyertai?</summary>
+        <p>Tidak perlu. Modul Iqra Arabia direka khas bermula dari tahap asas (beginner level) sehingga praktikal komunikasi.</p>
+      </details>
+      <details class="faq">
+        <summary>Apakah sijil yang bakal diterima oleh peserta?</summary>
+        <p>Peserta yang tamat pengajian akan menerima Sijil Penyertaan Rasmi daripada Iqra Arabia, Universiti Umm Al-Qura, Makkah.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ========== BORANG ========== -->
+  <section class="section" id="borang">
+    <div class="wrap">
+      <div class="card form-card" style="border-color:rgba(245,158,11,.28);background:linear-gradient(160deg,rgba(14,41,37,.95),rgba(15,23,42,.92))">
+        <div style="text-align:center">
+          <span class="eyebrow">Hasrat &amp; biasiswa</span>
+          <h2 style="margin-top:12px;font-size:clamp(22px,3.5vw,30px)">Borang pendaftaran hasrat &amp; subsidi biasiswa</h2>
+          <p class="muted" style="margin:10px 0 0;font-size:14.5px">Tinggal 40 kerusi sahaja. Isi maklumat di bawah untuk mengunci tempat &amp; kuota subsidi anda.</p>
+          <p class="muted" style="margin:8px 0 0;font-size:13px">Selepas borang diisi, anda akan dihubungkan dengan pegawai pendaftaran supaya kuota benar-benar disahkan — bukan sekadar nombor di skrin.</p>
+        </div>
+
+        <form id="hasratForm" style="margin-top:28px" novalidate>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="nama">Nama <span class="muted">(nama penuh pelajar)</span></label>
+            <input type="text" id="nama" name="nama" required autocomplete="name" placeholder="Nama penuh pelajar" maxlength="80" />
+          </div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="telPelajar">No telefon (pelajar)</label>
+              <input type="tel" id="telPelajar" name="telPelajar" required autocomplete="tel" placeholder="01XXXXXXXX" inputmode="tel" />
+            </div>
+            <div class="field">
+              <label for="telIbuBapa">No telefon (ibu/bapa)</label>
+              <input type="tel" id="telIbuBapa" name="telIbuBapa" required autocomplete="tel" placeholder="01XXXXXXXX" inputmode="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="emel">E-mel</label>
+            <input type="email" id="emel" name="emel" required autocomplete="email" placeholder="nama@emel.com" />
+          </div>
+          <div class="field">
+            <label for="sekolah">Sekolah</label>
+            <input type="text" id="sekolah" name="sekolah" required autocomplete="organization" placeholder="Nama sekolah" maxlength="120" />
+          </div>
+          <button class="btn btn-gold btn-block" type="submit">Hantar melalui WhatsApp kepada Ust Shahrul</button>
+          <p class="form-note">Maklumat dihantar terus kepada Ust Shahrul melalui WhatsApp. Tiada akaun diperlukan.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-band" aria-label="Hubungi kami">
+    <div class="wrap">
+      <h2 style="margin-bottom:10px">Sebarang soalan terus?</h2>
+      <p class="muted" style="margin:0 0 22px">Hubungi pegawai pendaftaran kami, +6018-3747006 (Ust Shahrul).</p>
+      <a class="btn btn-gold" target="_blank" rel="noopener"
+         href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20program%20Iqrab%20Haramain.">
+        WhatsApp Ust Shahrul
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom:12px">
+        <img src="/haramain/logos/iqrab-mark.png" width="36" height="36" alt="" />
+        <span class="bt">Iq<span>rab</span> Haramain</span>
+      </div>
+      <p style="margin:0 0 8px;max-width:420px"><strong style="color:var(--text2)">Yayasan Mahasiswa (786495-H)</strong></p>
+      <p style="margin:0;max-width:420px">Aras 1, Kompleks Belia &amp; Kebudayaan Selangor, Jalan Platinum 7/52, Seksyen 7, 40000 Shah Alam, Selangor Darul Ehsan</p>
+    </div>
+    <div>
+      <p style="margin:0 0 10px;color:var(--text2);font-weight:700">Pautan</p>
+      <p style="margin:0 0 6px"><a href="#atas">Iqrab Haramain</a></p>
+      <!-- EDIT: tukar ke https://iqrab.my/1000/ bila domain live -->
+      <p style="margin:0 0 6px"><a href="/1000/">Iqrab Kalimah</a></p>
+      <p style="margin:0 0 6px"><a href="https://wa.me/60183747006" target="_blank" rel="noopener">WhatsApp Ust Shahrul (+6018-3747006)</a></p>
+      <p style="margin:16px 0 0;font-size:13px">© <span id="yr">2026</span> Iqrab Haramain</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var form = document.getElementById("hasratForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.website && form.website.value) return; // honeypot
+
+    var nama = (form.nama.value || "").trim();
+    var telP = (form.telPelajar.value || "").trim();
+    var telI = (form.telIbuBapa.value || "").trim();
+    var emel = (form.emel.value || "").trim();
+    var sekolah = (form.sekolah.value || "").trim();
+
+    if (nama.length < 2 || !telP || !telI || !emel || !sekolah) {
+      alert("Sila lengkapkan semua medan borang.");
+      return;
+    }
+
+    var lines = [
+      "Assalamualaikum Ust Shahrul,",
+      "",
+      "Saya ingin mendaftar hasrat / mohon subsidi biasiswa Iqrab Haramain.",
+      "",
+      "Nama pelajar : " + nama,
+      "Tel pelajar  : " + telP,
+      "Tel ibu/bapa : " + telI,
+      "E-mel        : " + emel,
+      "Sekolah      : " + sekolah
+    ];
+    var url = "https://wa.me/60183747006?text=" + encodeURIComponent(lines.join("\n"));
+    window.open(url, "_blank", "noopener");
+  });
+})();
+</script>
+</body>
+</html>
