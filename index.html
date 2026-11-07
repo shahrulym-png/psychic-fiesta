@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<!-- ============================================================
+     IQRAB.MY — HOMEPAGE (placeholder, easy to edit)
+     Text marked  EDIT:  is safe to change. Replace this whole file
+     later with the full Iqrab Haramain page if you like — just keep
+     the 3 <script> tags + the #leadModal block at the bottom so the
+     Iqrab 1000 pop-up keeps working.
+     ============================================================ -->
+<title>Iqrab Haramain — Bahasa Arab & Al-Quran dari Makkah</title>
+<meta name="description" content="Iqrab Haramain: pengajian intensif Bahasa Arab & Al-Quran di Makkah. Mulakan hari ini dengan Iqrab Kalimah — belajar 1,030 perkataan Al-Quran secara percuma." />
+<meta name="theme-color" content="#0A1F1C" />
+<meta property="og:title" content="Iqrab Haramain — Bahasa Arab & Al-Quran dari Makkah" />
+<meta property="og:description" content="Mulakan dengan Iqrab Kalimah: 1,030 perkataan Al-Quran, 10 modul, percuma." />
+<link rel="icon" href="/1000/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/1000/icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg1:#0A1F1C;--bg2:#0F172A;--gold:#F59E0B;--emerald:#10B981;--cyan:#06B6D4;--muted:#94A3B8}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif;color:#E2E8F0;line-height:1.6;
+    background:radial-gradient(1200px 600px at 50% -10%,rgba(16,185,129,.14),transparent 60%),linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%) fixed}
+  a{color:#5EEAD4}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(10,31,28,.75);border-bottom:1px solid rgba(148,163,184,.12)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:800;font-size:18px}
+  .brand .logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--emerald),var(--cyan));color:var(--bg1);font-family:Amiri,serif;font-size:22px}
+  .brand .bt span{color:var(--gold)}
+  .btn-sm{white-space:nowrap}
+  @media (max-width:420px){.brand{font-size:16px}.hide-sm{display:none}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:800;border-radius:14px;padding:13px 20px;text-decoration:none;cursor:pointer;border:0}
+  .btn-gold{color:var(--bg1);background:linear-gradient(135deg,#F59E0B,#FBBF24);box-shadow:0 10px 30px -10px rgba(245,158,11,.6)}
+  .btn-ghost{color:#E2E8F0;background:rgba(15,23,42,.6);border:1px solid rgba(148,163,184,.25)}
+  .btn-sm{padding:9px 14px;font-size:14px;border-radius:12px}
+  .hero{padding:64px 0 40px;text-align:center}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);padding:6px 12px;border-radius:999px}
+  h1{font-size:clamp(30px,6vw,52px);line-height:1.12;margin:18px auto 14px;max-width:820px;color:#fff;font-weight:800}
+  h1 em{font-style:normal;color:var(--gold)}
+  .lead{font-size:clamp(16px,2.4vw,19px);color:#CBD5E1;max-width:680px;margin:0 auto 26px}
+  .ayah{font-family:Amiri,serif;font-size:clamp(26px,5vw,36px);color:var(--gold);direction:rtl;margin:28px 0 4px}
+  .ayah-ms{font-size:13px;color:var(--muted)}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  section{padding:48px 0}
+  h2{font-size:clamp(24px,4vw,34px);line-height:1.2;color:#fff;margin:0 0 12px}
+  .card{background:rgba(15,23,42,.6);border:1px solid rgba(148,163,184,.14);border-radius:22px;padding:24px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .promo{display:grid;gap:24px;grid-template-columns:1.2fr 1fr;align-items:center;border-color:rgba(245,158,11,.3);background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(15,23,42,.7))}
+  @media (max-width:760px){.promo{grid-template-columns:1fr}}
+  .promo ul{padding:0;list-style:none;margin:0 0 20px;display:grid;gap:8px}
+  .promo li::before{content:"✓ ";color:var(--emerald);font-weight:800}
+  .phone{justify-self:center;width:220px;aspect-ratio:9/18;border-radius:32px;border:6px solid #1E293B;background:linear-gradient(180deg,var(--bg1),var(--bg2));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+  .phone .w{font-family:Amiri,serif;font-size:64px;color:var(--gold);line-height:1.2}
+  .phone .t{color:var(--cyan);font-weight:600}
+  .phone .m{color:#fff;font-weight:800;font-size:20px}
+  .muted{color:var(--muted)}
+  footer{padding:36px 0 48px;border-top:1px solid rgba(148,163,184,.12);font-size:14px;color:var(--muted)}
+  footer a{color:#CBD5E1}
+
+  /* ---------- Lead modal ---------- */
+  .lm{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-end;justify-content:center;background:rgba(2,6,23,.72);backdrop-filter:blur(4px);opacity:0;transition:opacity .2s}
+  .lm[hidden]{display:none}
+  .lm.open{opacity:1}
+  .lm-panel{position:relative;width:100%;max-width:460px;max-height:calc(100dvh - 16px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+    background:linear-gradient(180deg,#0E2925,#0F172A);border:1px solid rgba(148,163,184,.18);border-radius:24px 24px 0 0;
+    padding:22px 18px max(18px,env(safe-area-inset-bottom));box-shadow:0 -20px 60px -20px rgba(0,0,0,.8);transform:translateY(24px);transition:transform .25s}
+  .lm.open .lm-panel{transform:none}
+  @media (min-width:640px){.lm{align-items:center}.lm-panel{border-radius:24px;padding:26px 24px 22px}}
+  .lm-x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:12px;border:1px solid rgba(148,163,184,.2);background:rgba(15,23,42,.7);color:#E2E8F0;font-size:22px;line-height:1;cursor:pointer}
+  .lm-x:focus-visible,.lm-later:focus-visible{outline:2px solid var(--emerald);outline-offset:2px}
+  .lm-later{display:block;margin:10px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
+  body.lm-lock{overflow:hidden}
+  @media (prefers-reduced-motion:reduce){.lm,.lm-panel{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="https://iqrabv2.grok.me" target="_blank" rel="noopener"><span class="logo" aria-hidden="true">ق</span><span class="bt">Iq<span>rab</span> Haramain</span></a>
+    <nav class="nav" aria-label="Produk Iqrab" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+      <a class="btn btn-ghost btn-sm" href="https://iqrabv2.grok.me" target="_blank" rel="noopener">Iqrab Haramain</a>
+      <a class="btn btn-gold btn-sm" href="/1000/" data-open-lead>Iqrab Kalimah<span class="hide-sm"> · Percuma</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- EDIT: hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Iqrab Haramain</span>
+      <h1>Bahasa Arab & Al-Quran, <em>dipelajari dari bumi Makkah</em></h1>
+      <p class="lead">Pengajian intensif Bahasa Arab yang memberi tumpuan kepada kalimah-kalimah Al-Quran — supaya bacaan solat, doa dan tilawah kita lebih difahami dan dihayati.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="/1000/" data-open-lead>Mula dengan Iqrab Kalimah — Percuma</a>
+        <!-- EDIT: program site link -->
+        <a class="btn btn-ghost" href="https://iqrabv2.grok.me" target="_blank" rel="noopener">Iqrab Haramain</a>
+      </div>
+      <p class="ayah">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ</p>
+      <p class="ayah-ms">“Dan sesungguhnya Kami telah mudahkan Al-Quran untuk peringatan.” — Al-Qamar 54:17</p>
+    </div>
+  </section>
+
+  <!-- Iqrab Kalimah promo (lead magnet) -->
+  <section id="iqrab-kalimah">
+    <div class="wrap">
+      <div class="card promo">
+        <div>
+          <span class="eyebrow">Percuma</span>
+          <h2 style="margin-top:12px">Iqrab Kalimah: belajar perkataan Al-Quran sambil scroll</h2>
+          <p class="muted">Satu perkataan, satu skrin — seperti scroll media sosial, tetapi setiap leretan mendekatkan kita kepada kalam Allah.</p>
+          <ul>
+            <li>1,030 perkataan yang kerap muncul dalam Al-Quran, dalam 10 modul</li>
+            <li>Setiap perkataan bersama potongan ayat sebenar, makna & sebutan rumi</li>
+            <li>Tandakan yang dah hafal, simpan kegemaran — boleh guna offline</li>
+          </ul>
+          <a class="btn btn-gold" href="/1000/" data-open-lead>Dapatkan Akses Percuma</a>
+        </div>
+        <div class="phone" aria-hidden="true"><div class="w">مِنْ</div><div class="t">min</div><div class="m">dari / daripada</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT: program section (placeholder — replace with your full Iqrab Haramain content) -->
+  <section id="program">
+    <div class="wrap">
+      <h2>Program Iqrab Haramain</h2>
+      <p class="muted" style="max-width:720px">Pengajian intensif Bahasa Arab & Al-Quran di Makkah Al-Mukarramah, menggabungkan ibadah umrah, kelas akademik dan talaqqi Al-Quran. Butiran pakej, tarikh dan yuran terkini boleh didapati daripada pegawai pendaftaran kami.</p>
+      <div class="grid" style="margin:20px 0 24px">
+        <div class="card"><h3 style="margin:0 0 6px;color:#fff">Modul Bahasa Arab Al-Quran</h3><p class="muted" style="margin:0">Tumpuan pada kalimah yang berulang dalam Al-Quran.</p></div>
+        <div class="card"><h3 style="margin:0 0 6px;color:#fff">Modul Komunikasi</h3><p class="muted" style="margin:0">Asas komunikasi harian Bahasa Arab di bumi Makkah.</p></div>
+        <div class="card"><h3 style="margin:0 0 6px;color:#fff">Ibadah & ilmu</h3><p class="muted" style="margin:0">Umrah, pengajian dan talaqqi dalam satu perjalanan.</p></div>
+      </div>
+      <div class="cta-row" style="justify-content:flex-start">
+        <!-- EDIT: WhatsApp number / message -->
+        <a class="btn btn-gold" href="https://iqrabv2.grok.me" target="_blank" rel="noopener">Lihat maklumat penuh program</a>
+        <a class="btn btn-ghost" href="https://wa.me/60183747006?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20program%20Iqrab%20Haramain." target="_blank" rel="noopener">Tanya melalui WhatsApp</a>
+        <a class="btn btn-ghost" href="/1000/" data-open-lead>Cuba Iqrab Kalimah dahulu</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <!-- EDIT: organisation details -->
+    <p>© <span id="yr">2026</span> Iqrab Haramain · <a href="https://iqrabv2.grok.me" target="_blank" rel="noopener">Iqrab Haramain</a> · <a href="/privasi">Notis Privasi (PDPA)</a> · <a href="/1000/" data-open-lead>Iqrab Kalimah</a></p>
+  </div>
+</footer>
+
+<!-- ===== Iqrab 1000 lead pop-up (keep this block) ===== -->
+<div id="leadModal" class="lm" hidden>
+  <div class="lm-panel" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lm-x" type="button" aria-label="Tutup" data-close-lead>×</button>
+    <div id="leadBody"></div>
+    <button class="lm-later" type="button" data-close-lead id="leadLater"></button>
+  </div>
+</div>
+<script src="/assets/copy.js"></script>
+<script src="/assets/lead.js"></script>
+<script src="/assets/popup.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
