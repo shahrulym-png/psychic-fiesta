@@ -283,6 +283,71 @@
     background:rgba(148,163,184,.1); border:1px solid rgba(148,163,184,.16);
     padding:6px 12px; border-radius:999px;
   }
+  .form-card{max-width:640px; margin:0 auto}
+  label{display:block; font-size:13px; font-weight:600; color:var(--text2); margin:0 0 6px}
+  .field{margin-bottom:14px}
+  input[type="text"], input[type="email"], input[type="tel"]{
+    width:100%; padding:12px 14px; border-radius:12px;
+    border:1px solid rgba(148,163,184,.25);
+    background:rgba(15,23,42,.55); color:#fff; font:inherit;
+  }
+  input::placeholder{color:#64748B}
+  .form-note{font-size:13px; color:var(--muted); margin-top:12px; text-align:center}
+  .honeypot{position:absolute; left:-9999px; opacity:0; height:0; width:0; overflow:hidden}
+
+  /* Features list */
+  .feat-icon{
+    width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+    background:rgba(16,185,129,.12); color:var(--emerald); font-weight:800; font-size:14px;
+    flex-shrink:0;
+  }
+
+  /* Footer */
+  .cta-band{
+    background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(15,23,42,.8));
+    border-block:1px solid rgba(148,163,184,.14);
+    text-align:center; padding:56px 0;
+  }
+  footer{
+    padding:40px 0 48px; border-top:1px solid rgba(148,163,184,.12);
+    font-size:14px; color:var(--muted);
+  }
+  footer a{color:var(--text2)}
+  .footer-grid{display:grid; gap:24px; grid-template-columns:1.4fr 1fr}
+  @media (max-width:640px){.footer-grid{grid-template-columns:1fr}}
+
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .pill{
+    font-size:12px; font-weight:600; color:var(--text2);
+    background:rgba(148,163,184,.1); border:1px solid rgba(148,163,184,.16);
+    padding:6px 12px; border-radius:999px;
+  }
+
+  .form-card{max-width:760px;margin:0 auto}
+  .field label,.fs legend{display:block;font-weight:700;font-size:14px;color:var(--text2);margin-bottom:6px}
+  .field input[type=text],.field input[type=tel],.field input[type=number],.field select,.field textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(15,23,42,.7);
+    border:1px solid rgba(148,163,184,.28);border-radius:12px;padding:12px 14px}
+  .field textarea{min-height:90px;resize:vertical}
+  .fs{border:0;padding:0;margin:0 0 16px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(148,163,184,.28);border-radius:12px;background:rgba(15,23,42,.55);cursor:pointer;font-size:14px}
+  .opt:has(input:checked){border-color:var(--gold);background:rgba(245,158,11,.12)}
+  .opt input{accent-color:var(--gold);width:18px;height:18px;margin:0}
+  .pay{display:grid;gap:12px}
+  .pay .opt{display:block;padding:16px}
+  .pay .opt strong{color:#fff;font-size:15px}
+  .pay ol{margin:8px 0 0;padding-left:20px;color:var(--text2);font-size:13.5px}
+  .req{color:var(--gold)}
+  .err{color:#FCA5A5;font-size:13px;margin-top:4px;display:none}
+  .invalid .err{display:block}
+  .invalid input,.invalid select,.invalid .opt{border-color:#F87171 !important}
+  .sec-t{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:26px 0 12px;border-top:1px solid var(--border);padding-top:18px}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text2)}
+  .consent input{width:20px;height:20px;accent-color:var(--gold);flex:none;margin-top:2px}
+  .btn-wa{background:#25D366;color:#06301A;font-size:18px;padding:18px 24px;box-shadow:0 12px 30px -10px rgba(37,211,102,.6)}
+  .hidden{display:none !important}
+  .ref{font-family:ui-monospace,monospace;font-size:20px;color:var(--gold);font-weight:800}
 </style>
 </head>
 <body>
@@ -298,7 +363,7 @@
       <!-- Produk: halaman ini -->
       <a class="nav-link" href="#atas">Iqrab Haramain</a>
       <a class="nav-link" href="/artikel/">Artikel</a>
-      <a class="btn btn-gold btn-sm" href="/daftar/">Daftar</a>
+      <a class="btn btn-gold btn-sm" href="#daftar">Daftar</a>
       <!-- EDIT: tukar ke https://iqrab.my/1000/ bila domain live -->
       <a class="btn btn-ghost btn-sm" href="/1000/">Iqrab Kalimah</a>
       <a class="btn btn-ghost btn-sm" href="https://wa.me/60182429006?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20program%20Iqrab%20Haramain." target="_blank" rel="noopener">WhatsApp</a>
@@ -316,9 +381,8 @@
         <h1 style="margin-top:16px">Menguasai Bahasa Arab &amp; memahami Al-Quran <em>secara langsung dari bumi Makkah Al-Mukarramah</em></h1>
         <p class="lead" style="margin:16px 0 0">Lebih dari sekadar umrah. Pengajian intensif 30–50 hari dengan kerjasama rasmi Universiti Umm Al-Qura, Makkah. Hadiahkan anjakan rohani buat diri &amp; anak-anak tersayang.</p>
         <div class="cta-row">
-          <a class="btn btn-gold" href="/daftar/">Daftar sekarang</a>
+          <a class="btn btn-gold" href="#daftar">Daftar sekarang</a>
           <a class="btn btn-ghost" href="#pakej">Lihat pakej program</a>
-          <a class="btn btn-ghost" href="#borang">Mohon biasiswa / hasrat</a>
         </div>
         <div class="hero-ayah">
           <p class="ayah">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ</p>
@@ -554,7 +618,7 @@
             <li><strong>Tarikh:</strong>&nbsp;1 Disember – 30 Disember 2026</li>
             <li>80 Jam Kelas Bahasa Arab (30 Hari di Makkah + 40 Jam di Malaysia)</li>
           </ul>
-          <a class="btn btn-dark btn-block" href="/daftar/?pakej=cuti-sekolah-30">
+          <a class="btn btn-dark btn-block" href="#daftar" data-pakej="cuti-sekolah-30">
             Daftar Iqra Cuti Sekolah 30 Hari
           </a>
         </article>
@@ -570,7 +634,7 @@
             <li><strong>Tarikh:</strong>&nbsp;30 Disember 2026 – 30 Januari 2027</li>
             <li>80 Jam Kelas Bahasa Arab (30 Hari di Makkah + 40 Jam di Malaysia)</li>
           </ul>
-          <a class="btn btn-dark btn-block" href="/daftar/?pakej=spm-30">
+          <a class="btn btn-dark btn-block" href="#daftar" data-pakej="spm-30">
             Daftar Iqra Lepasan SPM 30 Hari
           </a>
         </article>
@@ -585,7 +649,7 @@
             <li><strong>Tarikh:</strong>&nbsp;30 Disember 2026 – 17 Februari 2027</li>
             <li>120 Jam Kelas Bahasa Arab (50 Hari di Makkah + 40 Jam di Malaysia)</li>
           </ul>
-          <a class="btn btn-gold btn-block" href="/daftar/?pakej=spm-50">
+          <a class="btn btn-gold btn-block" href="#daftar" data-pakej="spm-50">
             Daftar Program 50 Hari
           </a>
         </article>
@@ -697,47 +761,61 @@
     </div>
   </section>
 
-  <!-- ========== BORANG ========== -->
-  <section class="section" id="borang">
+  <!-- ========== DAFTAR ========== -->
+  <section class="section" id="daftar" style="scroll-margin-top:70px">
     <div class="wrap">
       <div class="card form-card" style="border-color:rgba(245,158,11,.28);background:linear-gradient(160deg,rgba(14,41,37,.95),rgba(15,23,42,.92))">
-        <div style="text-align:center">
-          <span class="eyebrow">Hasrat &amp; biasiswa</span>
-          <h2 style="margin-top:12px;font-size:clamp(22px,3.5vw,30px)">Borang pendaftaran hasrat &amp; subsidi biasiswa</h2>
-          <p class="muted" style="margin:10px 0 0;font-size:14.5px">Tinggal 40 kerusi sahaja. Isi maklumat di bawah untuk mengunci tempat &amp; kuota subsidi anda.</p>
-          <p class="muted" style="margin:8px 0 0;font-size:13px">Selepas borang diisi, anda akan dihubungkan dengan pegawai pendaftaran supaya kuota benar-benar disahkan — bukan sekadar nombor di skrin.</p>
-        </div>
+        <div style="text-align:center;margin-bottom:22px"><span class="eyebrow">Pendaftaran</span>
+        <h2 style="margin-top:12px;font-size:clamp(22px,3.5vw,30px)">Borang pendaftaran Iqrab Haramain</h2>
+        <p class="muted" style="margin:10px 0 0;font-size:14.5px">Isi borang ini dalam 3 minit. Ruangan bertanda <span class="req">*</span> wajib diisi.</p></div>
+<form id="f" novalidate>
+<div class="honeypot" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="sec-t" style="border:0;padding:0;margin-top:0">1. Maklumat peserta</div>
+<fieldset class="fs" data-f="pengisi"><legend>Siapa yang mengisi borang ini? <span class="req">*</span></legend><div class="opts"><label class="opt"><input type="radio" name="pengisi" value="Peserta sendiri" required> Peserta sendiri</label><label class="opt"><input type="radio" name="pengisi" value="Ibu bapa / penjaga" required> Ibu bapa / penjaga</label></div><div class="err">Sila pilih satu.</div></fieldset>
+<div class="field" data-f="nama"><label for="nama">Nama penuh peserta <span class="req">*</span></label><input type="text" id="nama" name="nama" placeholder="Seperti dalam MyKad / pasport" maxlength="100" autocomplete="name" required><div class="err">Sila isi nama penuh (sekurang-kurangnya 3 huruf).</div></div>
+<div class="grid grid-2">
+<div class="field" data-f="umur"><label for="umur">Umur <span class="req">*</span></label><input type="number" id="umur" name="umur" placeholder="cth. 17" min="7" max="90" inputmode="numeric" required><div class="err">Sila isi umur yang sah (7–90).</div></div>
+<div class="field" data-f="negeri"><label for="negeri">Negeri <span class="req">*</span></label><select id="negeri" name="negeri" required><option value="">— Pilih negeri —</option><option>Johor</option><option>Kedah</option><option>Kelantan</option><option>Melaka</option><option>Negeri Sembilan</option><option>Pahang</option><option>Perak</option><option>Perlis</option><option>Pulau Pinang</option><option>Sabah</option><option>Sarawak</option><option>Selangor</option><option>Terengganu</option><option>W.P. Kuala Lumpur</option><option>W.P. Labuan</option><option>W.P. Putrajaya</option><option>Luar negara</option></select><div class="err">Sila pilih negeri.</div></div>
+</div>
+<div class="field" data-f="sekolah"><label for="sekolah">Sekolah <span class="req">*</span></label><input type="text" id="sekolah" name="sekolah" placeholder="Nama sekolah (atau sekolah terakhir)" maxlength="150" required><div class="err">Sila isi ruangan ini.</div></div>
+<div class="grid grid-2">
+<div class="field" data-f="telPeserta"><label for="telPeserta">No. telefon peserta <span class="req">*</span></label><input type="tel" id="telPeserta" name="telPeserta" placeholder="01X-XXX XXXX" inputmode="tel" autocomplete="tel" required><div class="err">No. telefon tidak sah. Cth: 012-345 6789</div></div>
+<div class="field" data-f="telPenjaga"><label for="telPenjaga">No. telefon ibu bapa / penjaga <span class="req">*</span></label><input type="tel" id="telPenjaga" name="telPenjaga" placeholder="01X-XXX XXXX" inputmode="tel" required><div class="err">No. telefon tidak sah. Cth: 012-345 6789</div></div>
+</div>
+<div class="sec-t">2. Latar belakang</div>
+<fieldset class="fs" data-f="hafazan"><legend>Hafal al-Quran? <span class="req">*</span></legend><div class="opts"><label class="opt"><input type="radio" name="hafazan" value="Tidak" required> Tidak</label><label class="opt"><input type="radio" name="hafazan" value="Beberapa juzuk" required> Beberapa juzuk</label><label class="opt"><input type="radio" name="hafazan" value="30 juzuk" required> 30 juzuk</label></div><div class="err">Sila pilih satu.</div></fieldset>
+<div class="field hidden" id="juzukWrap" data-f="juzuk"><label for="juzuk">Berapa juzuk? <span class="req">*</span></label><input type="number" id="juzuk" name="juzuk" min="1" max="29" inputmode="numeric" placeholder="cth. 5"><div class="err">Sila isi bilangan juzuk (1–29).</div></div>
+<fieldset class="fs" data-f="arab"><legend>Asas bahasa Arab? <span class="req">*</span></legend><div class="opts"><label class="opt"><input type="radio" name="arab" value="Tiada" required> Tiada</label><label class="opt"><input type="radio" name="arab" value="Asas" required> Asas</label><label class="opt"><input type="radio" name="arab" value="Boleh faham teks" required> Boleh faham teks</label></div><div class="err">Sila pilih satu.</div></fieldset>
+<fieldset class="fs" data-f="pasport"><legend>Pasport sah lebih 6 bulan? <span class="req">*</span></legend><div class="opts"><label class="opt"><input type="radio" name="pasport" value="Ya" required> Ya</label><label class="opt"><input type="radio" name="pasport" value="Tidak" required> Tidak</label><label class="opt"><input type="radio" name="pasport" value="Sedang memohon" required> Sedang memohon</label></div><div class="err">Sila pilih satu.</div></fieldset>
+<fieldset class="fs" data-f="makkah"><legend>Pernah ke Makkah? <span class="req">*</span></legend><div class="opts"><label class="opt"><input type="radio" name="makkah" value="Ya" required> Ya</label><label class="opt"><input type="radio" name="makkah" value="Tidak" required> Tidak</label></div><div class="err">Sila pilih satu.</div></fieldset>
+<div class="field"><label for="kesihatan">Masalah kesihatan / alahan <span class="muted">(pilihan)</span></label><textarea id="kesihatan" name="kesihatan" maxlength="500" placeholder="cth. asma, alahan makanan laut. Biarkan kosong jika tiada."></textarea></div>
+<div class="field" data-f="sumber"><label for="sumber">Dari mana anda tahu tentang program ini? <span class="req">*</span></label><select id="sumber" name="sumber" required><option value="">— Pilih —</option><option>Instagram</option><option>TikTok</option><option>Facebook</option><option>Kawan / keluarga</option><option>Sekolah</option><option>Google</option><option>Lain-lain</option></select><div class="err">Sila pilih satu.</div></div>
+<div class="sec-t">3. Pakej &amp; bayaran</div>
+<fieldset class="fs" data-f="pakej"><legend>Pakej <span class="req">*</span></legend><div class="pay">
+<label class="opt"><input type="radio" name="pakej" value="Pakej Iqrab 30 Hari Cuti Sekolah" data-slug="cuti-sekolah-30" required> <strong>Pakej Iqrab 30 Hari Cuti Sekolah</strong></label>
+<label class="opt"><input type="radio" name="pakej" value="Pakej Iqrab 30 Hari Lepasan SPM" data-slug="spm-30"> <strong>Pakej Iqrab 30 Hari Lepasan SPM</strong></label>
+<label class="opt"><input type="radio" name="pakej" value="Pakej Iqrab 50 Hari Lepasan SPM" data-slug="spm-50"> <strong>Pakej Iqrab 50 Hari Lepasan SPM</strong></label>
+</div><div class="err">Sila pilih pakej.</div><p class="muted" style="font-size:13px;margin:8px 0 0">Harga &amp; tarikh setiap pakej: <a href="#pakej">lihat bahagian pakej di atas</a>.</p></fieldset>
+<div class="card" style="padding:18px;margin-bottom:14px;border-color:rgba(245,158,11,.35)">
+<strong style="color:#fff">Jadual bayaran (ansuran)</strong>
+<ol style="margin:8px 0 0;padding-left:20px;color:var(--text2);font-size:14px">
+<li><b>Deposit pendaftaran RM1,000</b>, semasa mendaftar.</li>
+<li><b>60% daripada baki</b>, 1 bulan sebelum tarikh penerbangan.</li>
+<li><b>40% baki terakhir</b>, 15 hari sebelum tarikh penerbangan.</li></ol>
+<div data-f="setujuBayaran" style="margin-top:12px"><label class="consent"><input type="checkbox" name="setujuBayaran" id="setujuBayaran" required> <span>Saya bersetuju dengan jadual bayaran di atas. <span class="req">*</span></span></label><div class="err">Sila tandakan persetujuan jadual bayaran.</div></div>
+</div>
+<div data-f="consent" style="margin:16px 0"><label class="consent"><input type="checkbox" name="consent" id="consent" required> <span>Saya bersetuju maklumat ini dikumpul dan digunakan oleh pihak Iqrab untuk urusan pendaftaran dan menghubungi saya, selaras dengan <a href="/privasi/" target="_blank">Notis Privasi (PDPA)</a>. <span class="req">*</span></span></label><div class="err">Sila tandakan persetujuan privasi.</div></div>
+<button class="btn btn-gold btn-block" type="submit" id="btnSubmit" style="font-size:17px;padding:16px">Hantar pendaftaran</button>
+<p class="form-note">Selepas hantar, anda akan diberi butang WhatsApp untuk mengesahkan pendaftaran dengan kami.</p>
+</form>
+<div id="done" class="hidden" style="text-align:center" aria-live="polite">
+<div style="font-size:48px">✅</div>
+<h2 style="font-size:clamp(22px,4vw,30px)">Terima kasih! Pendaftaran diterima.</h2>
+<p class="muted">No. rujukan anda:</p><p class="ref" id="refOut"></p>
+<p style="color:var(--text2)">Langkah terakhir: tekan butang di bawah untuk menghantar maklumat anda kepada pegawai pendaftaran melalui WhatsApp supaya tempat anda dapat disahkan.</p>
+<a id="waBtn" class="btn btn-wa btn-block" href="#" target="_blank" rel="noopener">Hantar ke WhatsApp</a>
+<p class="form-note">WhatsApp: 018-242 9006</p>
 
-        <form id="hasratForm" style="margin-top:28px" novalidate>
-          <div class="honeypot" aria-hidden="true">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-          <div class="field">
-            <label for="nama">Nama <span class="muted">(nama penuh pelajar)</span></label>
-            <input type="text" id="nama" name="nama" required autocomplete="name" placeholder="Nama penuh pelajar" maxlength="80" />
-          </div>
-          <div class="grid grid-2">
-            <div class="field">
-              <label for="telPelajar">No telefon (pelajar)</label>
-              <input type="tel" id="telPelajar" name="telPelajar" required autocomplete="tel" placeholder="01XXXXXXXX" inputmode="tel" />
-            </div>
-            <div class="field">
-              <label for="telIbuBapa">No telefon (ibu/bapa)</label>
-              <input type="tel" id="telIbuBapa" name="telIbuBapa" required autocomplete="tel" placeholder="01XXXXXXXX" inputmode="tel" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="emel">E-mel</label>
-            <input type="email" id="emel" name="emel" required autocomplete="email" placeholder="nama@emel.com" />
-          </div>
-          <div class="field">
-            <label for="sekolah">Sekolah</label>
-            <input type="text" id="sekolah" name="sekolah" required autocomplete="organization" placeholder="Nama sekolah" maxlength="120" />
-          </div>
-          <button class="btn btn-gold btn-block" type="submit">Hantar melalui WhatsApp</button>
-          <p class="form-note">Maklumat dihantar terus kepada pegawai pendaftaran melalui WhatsApp. Tiada akaun diperlukan.</p>
-        </form>
       </div>
     </div>
   </section>
@@ -769,7 +847,7 @@
     <div>
       <p style="margin:0 0 10px;color:var(--text2);font-weight:700">Pautan</p>
       <p style="margin:0 0 6px"><a href="#atas">Iqrab Haramain</a></p>
-      <p style="margin:0 0 6px"><a href="/daftar/">Daftar</a></p>
+      <p style="margin:0 0 6px"><a href="#daftar">Daftar</a></p>
       <p style="margin:0 0 6px"><a href="/artikel/">Artikel</a></p>
       <!-- EDIT: tukar ke https://iqrab.my/1000/ bila domain live -->
       <p style="margin:0 0 6px"><a href="/1000/">Iqrab Kalimah</a></p>
@@ -779,42 +857,81 @@
   </div>
 </footer>
 
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 <script>
+/* ===== TETAPAN: tampal URL Web App Google Apps Script di sini ===== */
+const SCRIPT_URL = 'PASTE_URL_HERE';
+const WA_NUMBER = '60182429006';
+const PAYMENT_PLAN = 'Ansuran 60/40 (Deposit RM1,000; 60% baki 1 bulan sebelum penerbangan; 40% baki 15 hari sebelum penerbangan)';
 (function () {
-  document.getElementById("yr").textContent = new Date().getFullYear();
-
-  var form = document.getElementById("hasratForm");
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
+  'use strict';
+    const f = document.getElementById('f');
+  const val = n => { const el = f.elements[n]; if (!el) return ''; if (el instanceof RadioNodeList) return el.value || ''; if (el.type === 'checkbox') return el.checked; return (el.value || '').trim(); };
+  function pick(slug) { const r = slug && f.querySelector('input[name=pakej][data-slug="' + slug + '"]'); if (r) r.checked = true; }
+  pick(new URLSearchParams(location.search).get('pakej'));
+  document.querySelectorAll('a[data-pakej]').forEach(a => a.addEventListener('click', () => pick(a.dataset.pakej)));
+  const jw = document.getElementById('juzukWrap');
+  f.querySelectorAll('input[name=hafazan]').forEach(r => r.addEventListener('change', () => jw.classList.toggle('hidden', val('hafazan') !== 'Beberapa juzuk')));
+  function phoneOk(p) { return /^(?:\+?60|0)1\d{8,9}$/.test(p.replace(/[\s\-().]/g, '')) || /^\+(?!60)[1-9]\d{7,14}$/.test(p.replace(/[\s\-().]/g, '')); }
+  function fmtPhone(p) { const s = p.replace(/[\s\-().]/g, ''); const m = s.match(/^(?:\+?60|0)(1\d{8,9})$/); return m ? '0' + m[1] : s; }
+  function check() {
+    const bad = [];
+    const t = (c, n) => { if (!c) bad.push(n); };
+    t(val('pengisi'), 'pengisi'); t(val('nama').length >= 3, 'nama');
+    const u = +val('umur'); t(u >= 7 && u <= 90, 'umur'); t(val('negeri'), 'negeri'); t(val('sekolah'), 'sekolah');
+    t(phoneOk(val('telPeserta')), 'telPeserta'); t(phoneOk(val('telPenjaga')), 'telPenjaga');
+    t(val('hafazan'), 'hafazan');
+    if (val('hafazan') === 'Beberapa juzuk') { const j = +val('juzuk'); t(j >= 1 && j <= 29, 'juzuk'); }
+    t(val('arab'), 'arab'); t(val('pasport'), 'pasport'); t(val('makkah'), 'makkah'); t(val('sumber'), 'sumber');
+    t(val('pakej'), 'pakej'); t(val('setujuBayaran'), 'setujuBayaran'); t(val('consent'), 'consent');
+    f.querySelectorAll('[data-f]').forEach(el => el.classList.toggle('invalid', bad.includes(el.dataset.f)));
+    return bad;
+  }
+  function refId() {
+    const d = new Date(), p = n => String(n).padStart(2, '0');
+    const c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r = '';
+    const a = new Uint32Array(4); (window.crypto || {}).getRandomValues ? crypto.getRandomValues(a) : a.forEach((_, i) => a[i] = Math.random() * 1e9);
+    a.forEach(x => r += c[x % c.length]);
+    return 'IQ-' + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + '-' + r;
+  }
+  function data(ref) {
+    const h = val('hafazan');
+    return { rujukan: ref, pengisi: val('pengisi'), nama: val('nama'), umur: val('umur'), sekolah: val('sekolah'), negeri: val('negeri'),
+      telPeserta: fmtPhone(val('telPeserta')), telPenjaga: fmtPhone(val('telPenjaga')),
+      hafazan: h === 'Beberapa juzuk' ? 'Beberapa juzuk (' + val('juzuk') + ' juzuk)' : h,
+      arab: val('arab'), pasport: val('pasport'), makkah: val('makkah'), kesihatan: val('kesihatan') || 'Tiada',
+      sumber: val('sumber'), pakej: val('pakej'), bayaran: 'Ansuran 60/40', setujuBayaran: 'Ya', consent: 'Ya', halaman: location.href };
+  }
+  function waText(d) {
+    return ['Assalamualaikum, saya ingin mengesahkan pendaftaran Iqrab.', '', '*No. Rujukan:* ' + d.rujukan, '',
+      '*MAKLUMAT PESERTA*', 'Nama: ' + d.nama, 'Umur: ' + d.umur, 'Sekolah: ' + d.sekolah, 'Negeri: ' + d.negeri,
+      'Tel. peserta: ' + d.telPeserta, 'Tel. ibu bapa/penjaga: ' + d.telPenjaga, 'Borang diisi oleh: ' + d.pengisi, '',
+      '*LATAR BELAKANG*', 'Hafazan al-Quran: ' + d.hafazan, 'Asas bahasa Arab: ' + d.arab, 'Pasport sah >6 bulan: ' + d.pasport,
+      'Pernah ke Makkah: ' + d.makkah, 'Kesihatan/alahan: ' + d.kesihatan, 'Tahu program dari: ' + d.sumber, '',
+      '*PAKEJ & BAYARAN*', 'Pakej: ' + d.pakej, 'Jadual bayaran (dipersetujui):',
+      '1) Deposit pendaftaran RM1,000', '2) 60% baki: 1 bulan sebelum penerbangan', '3) 40% baki: 15 hari sebelum penerbangan',
+      '', 'Terima kasih.'].join('\n');
+  }
+  f.addEventListener('submit', async e => {
     e.preventDefault();
-    if (form.website && form.website.value) return; // honeypot
-
-    var nama = (form.nama.value || "").trim();
-    var telP = (form.telPelajar.value || "").trim();
-    var telI = (form.telIbuBapa.value || "").trim();
-    var emel = (form.emel.value || "").trim();
-    var sekolah = (form.sekolah.value || "").trim();
-
-    if (nama.length < 2 || !telP || !telI || !emel || !sekolah) {
-      alert("Sila lengkapkan semua medan borang.");
-      return;
-    }
-
-    var lines = [
-      "Assalamualaikum,",
-      "",
-      "Saya ingin mendaftar hasrat / mohon subsidi biasiswa Iqrab Haramain.",
-      "",
-      "Nama pelajar : " + nama,
-      "Tel pelajar  : " + telP,
-      "Tel ibu/bapa : " + telI,
-      "E-mel        : " + emel,
-      "Sekolah      : " + sekolah
-    ];
-    var url = "https://wa.me/60182429006?text=" + encodeURIComponent(lines.join("\n"));
-    window.open(url, "_blank", "noopener");
+    if (val('website')) return;
+    const bad = check();
+    if (bad.length) { const el = f.querySelector('[data-f="' + bad[0] + '"]'); el && el.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    const btn = document.getElementById('btnSubmit'); btn.disabled = true; btn.textContent = 'Menghantar…';
+    const d = data(refId());
+    try {
+      if (SCRIPT_URL && SCRIPT_URL.indexOf('PASTE_') !== 0) {
+        await Promise.race([
+          fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: new URLSearchParams(d).toString() }),
+          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 12000))]);
+      }
+    } catch (err) { console.warn('Gagal simpan ke Sheet:', err); }
+    document.getElementById('refOut').textContent = d.rujukan;
+    document.getElementById('waBtn').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(d));
+    f.classList.add('hidden'); document.getElementById('done').classList.remove('hidden');
+    document.getElementById('daftar').scrollIntoView({ behavior: 'smooth' });
   });
+  window.__iqrabTest = { waText, data, refId, phoneOk };
 })();
 </script>
 </body>
