@@ -1,5 +1,5 @@
 /* Iqrab service worker: offline cache for the single-page app + its CDN assets. */
-const CACHE = "iqrab-1000-v4";   // bump to force refresh after edits
+const CACHE = "iqrab-1000-v2";   // bump to force refresh after edits
 const CORE = ["./", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./icon-180.png", "/assets/lead.js", "/assets/copy.js"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));

@@ -102,3 +102,30 @@ footer a:hover{color:#fff}
   .article p,.article li{font-size:15.5px}
   .cta-box{padding:22px 16px}
 }
+/* ===== Siri Tadabbur Tertib Penurunan: label, navigasi siri, nota kaki ===== */
+.series-label{margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold)}
+.series-label a{color:var(--gold);text-decoration:none;border-bottom:1px dashed rgba(245,158,11,.45)}
+.series-label a:hover{color:#fff}
+sup.fn{font-size:.68em;line-height:0;vertical-align:super;margin-left:1px}
+sup.fn a{color:var(--gold);text-decoration:none;font-weight:700;padding:0 2px;border-radius:4px}
+sup.fn a:hover,sup.fn a:focus{background:rgba(245,158,11,.15)}
+.series-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 8px}
+.series-nav a,.series-nav .sn-soon{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 18px}
+.series-nav a:hover{border-color:rgba(245,158,11,.45)}
+.series-nav small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.series-nav strong{display:block;color:#fff;font-size:15px;line-height:1.35}
+.series-nav .sn-next,.series-nav .sn-soon{text-align:right}
+.series-nav .sn-soon strong{color:var(--muted);font-weight:600}
+.footnotes{margin:36px 0 8px;padding-top:20px;border-top:1px solid rgba(148,163,184,.18)}
+.footnotes h2{font-size:18px !important;margin:0 0 12px !important}
+.footnotes ol{margin:0;padding-left:22px}
+.footnotes li{font-size:13.5px !important;line-height:1.65;color:var(--muted);margin-bottom:8px;scroll-margin-top:90px}
+.footnotes li:target{color:var(--text2);background:rgba(245,158,11,.08);border-radius:8px}
+.footnotes li a{color:var(--gold);word-break:break-word}
+.footnotes .fn-back{text-decoration:none;margin-left:4px}
+sup.fn a{scroll-margin-top:90px}
+.series-block{margin:8px 0 40px}
+.series-block h2.series-title{color:#fff;font-size:clamp(20px,2.6vw,26px);margin:0 0 6px}
+.series-block p.series-intro{color:var(--muted);max-width:760px;margin:0 0 4px;font-size:15px}
+.card .part{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:var(--muted)}
+@media (max-width:560px){.series-nav{grid-template-columns:1fr}.series-nav .sn-next,.series-nav .sn-soon{text-align:left}}

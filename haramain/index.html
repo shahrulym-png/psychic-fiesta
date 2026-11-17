@@ -349,24 +349,6 @@
   .hidden{display:none !important}
   .ref{font-family:ui-monospace,monospace;font-size:20px;color:var(--gold);font-weight:800}
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1509130494453095');
-fbq('track', 'PageView');
-// Contact event on any WhatsApp link click (no personal data sent)
-document.addEventListener('click', function (e) {
-  var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
-  if (a && window.fbq) fbq('track', 'Contact');
-}, true);
-</script>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=1509130494453095&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -905,13 +887,6 @@ const PAYMENT_PLAN = 'Ansuran 60/40 (Deposit RM1,000; 60% baki 1 bulan sebelum p
     f.querySelectorAll('[data-f]').forEach(el => el.classList.toggle('invalid', bad.includes(el.dataset.f)));
     return bad;
   }
-  function cookie(k) { const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + k + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; }
-  function metaIds() {   // Meta Pixel + Conversions API: browser ids passed to the server event
-    let fbc = cookie('_fbc');
-    if (!fbc) { const id = new URLSearchParams(location.search).get('fbclid'); if (id) fbc = 'fb.1.' + Date.now() + '.' + id; }
-    return { fbp: cookie('_fbp'), fbc };
-  }
-  const newEventId = () => (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
   function refId() {
     const d = new Date(), p = n => String(n).padStart(2, '0');
     const c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r = '';
@@ -944,19 +919,15 @@ const PAYMENT_PLAN = 'Ansuran 60/40 (Deposit RM1,000; 60% baki 1 bulan sebelum p
     if (bad.length) { const el = f.querySelector('[data-f="' + bad[0] + '"]'); el && el.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
     const btn = document.getElementById('btnSubmit'); btn.disabled = true; btn.textContent = 'Menghantar…';
     const d = data(refId());
-    const eventId = newEventId(), meta = metaIds();
-    // Extra fields for the server-side Meta Lead (CAPI); the Sheet ignores keys it has no column for
-    const post = Object.assign({}, d, { event_id: eventId, fbp: meta.fbp, fbc: meta.fbc, ua: navigator.userAgent.slice(0, 300), source: 'haramain' });
     try {
       if (SCRIPT_URL && SCRIPT_URL.indexOf('PASTE_') !== 0) {
         await Promise.race([
-          fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: new URLSearchParams(post).toString() }),
+          fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: new URLSearchParams(d).toString() }),
           new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 12000))]);
       }
     } catch (err) { console.warn('Gagal simpan ke Sheet:', err); }
     document.getElementById('refOut').textContent = d.rujukan;
     document.getElementById('waBtn').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(d));
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'Iqrab Haramain' }, { eventID: eventId });   // Meta Pixel; no personal data sent. Same eventID as the server (CAPI) event
     f.classList.add('hidden'); document.getElementById('done').classList.remove('hidden');
     document.getElementById('daftar').scrollIntoView({ behavior: 'smooth' });
   });
