@@ -220,6 +220,7 @@ const LEAD_ENDPOINT   = "/api/lead";
         } catch (err) { enqueue(payload); queued = true; }   // offline / server error: unlock anyway, retry later
       }
       unlock(payload.name, opts.source, { remember: f.elements.remember.checked, phone: payload.phone });
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Iqrab Kalimah', content_category: opts.source || '' });   // Meta Pixel; no name/phone sent
       if (opts.onDone) opts.onDone(payload.name, queued);
     });
     return { form: f, titleId: `${n}-t` };
