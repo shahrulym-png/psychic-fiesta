@@ -110,7 +110,15 @@ const LEAD_ENDPOINT   = "/api/lead";
   window.addEventListener("online", flushQueue);
   if (document.readyState === "complete") setTimeout(flushQueue, 1500); else window.addEventListener("load", () => setTimeout(flushQueue, 1500));
 
-  const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+  const uid = () => (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+
+  /* ---------- Meta Pixel + Conversions API ids (same event_id in browser & server = no double count) ---------- */
+  function cookie(k) { const m = document.cookie.match(new RegExp("(?:^|;\\s*)" + k + "=([^;]*)")); return m ? decodeURIComponent(m[1]) : ""; }
+  function metaIds() {
+    let fbc = cookie("_fbc");
+    if (!fbc) { const id = new URLSearchParams(location.search).get("fbclid"); if (id) fbc = "fb.1." + Date.now() + "." + id; }
+    return { fbp: cookie("_fbp"), fbc };
+  }
 
   /* ---------- form UI (self-styled, Iqrab theme) ---------- */
   const CSS = `
@@ -200,8 +208,9 @@ const LEAD_ENDPOINT   = "/api/lead";
       if (!v.ok) return showErr(v.err);
       showErr({});
       btn.disabled = true; btn.textContent = "Sedang menghantar…";
+      const meta = metaIds(), eventId = uid();
       const payload = {
-        id: uid(), ts: new Date().toISOString(), name: v.clean.name, email: "", phone: v.clean.phone,
+        id: eventId, event_id: eventId, fbp: meta.fbp, fbc: meta.fbc, ts: new Date().toISOString(), name: v.clean.name, email: "", phone: v.clean.phone,
         phoneRaw: String(d.phone).trim(), consent: true, consentText: CONSENT_TEXT, source: opts.source,
         page: location.href.split("#")[0], ua: navigator.userAgent.slice(0, 300), website: f.elements.website.value
       };
@@ -220,11 +229,11 @@ const LEAD_ENDPOINT   = "/api/lead";
         } catch (err) { enqueue(payload); queued = true; }   // offline / server error: unlock anyway, retry later
       }
       unlock(payload.name, opts.source, { remember: f.elements.remember.checked, phone: payload.phone });
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'Iqrab Kalimah', content_category: opts.source || '' });   // Meta Pixel; no name/phone sent
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Iqrab Kalimah', content_category: opts.source || '' }, { eventID: eventId });   // Meta Pixel; no name/phone sent. Same eventID as the server (CAPI) event
       if (opts.onDone) opts.onDone(payload.name, queued);
     });
     return { form: f, titleId: `${n}-t` };
   }
 
-  window.IqrabLead = { isUnlocked, getLead, getRemembered, unlock, validate, normalizePhone, mountForm, flushQueue, esc, CONSENT_TEXT, _cfg: CFG, _keys: { K_LEAD, K_QUEUE, K_REM, K_SESS } };
+  window.IqrabLead = { isUnlocked, getLead, getRemembered, unlock, validate, normalizePhone, mountForm, flushQueue, esc, metaIds, CONSENT_TEXT, _cfg: CFG, _keys: { K_LEAD, K_QUEUE, K_REM, K_SESS } };
 })();
